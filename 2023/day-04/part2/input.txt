@@ -1,0 +1,33 @@
+// Day 06, Tuning Trouble
+// Part 1
+// author@HamzaMateen
+
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"io"
+	"log"
+	"os"
+	"path/filepath"
+)
+
+func main() {
+	currentDir, err := os.Getwd()
+
+	if err != nil {
+		panic(err)
+	}
+
+	inputFilePath := filepath.Join(currentDir, "./parta/input.txt")
+
+	file, err := os.Open(inputFilePath)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	reader := bufio.NewReader(file)
+
+	charCount := 0
+	marker := make([]rune, 4)
